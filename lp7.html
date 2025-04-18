@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Last Chance to Hide Your Data</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to bottom right, #fff3e0, #ffffff);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            color: #263238;
+        }
+        .container {
+            max-width: 660px;
+            padding: 2.5em;
+            background: #ffffff;
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            text-align: center;
+            z-index: 2;
+        }
+        h1 {
+            font-size: 2.6em;
+            color: #c62828;
+            margin-bottom: 0.4em;
+        }
+        h2 {
+            font-size: 1.3em;
+            color: #ef6c00;
+            margin-bottom: 1.5em;
+        }
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 1.2em;
+        }
+        .cta {
+            background: #d50000;
+            color: #fff;
+            border: none;
+            padding: 1.2em 2.4em;
+            font-size: 1.2em;
+            border-radius: 12px;
+            cursor: pointer;
+            margin-top: 1.5em;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+            transition: background 0.3s ease;
+        }
+        .cta:hover {
+            background: #b71c1c;
+        }
+        .note {
+            font-size: 0.95em;
+            color: #6d6d6d;
+            margin-top: 1.2em;
+        }
+        .timer {
+            font-size: 1.4em;
+            color: #d84315;
+            font-weight: bold;
+            margin: 1.2em 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>You're Running Out of Time</h1>
+        <h2>This Private VPN Activation Will Expire Shortly</h2>
+        <p><strong>Hackers don’t need a password to find you — just your open connection.</strong></p>
+        <p>Thousands have already secured their data. You're next — but only if you act before the timer runs out.</p>
+        <div class="timer" id="countdown">05:00</div>
+        <a class="cta" href="https://lnkmeup.com/view.php?id=5539743&pub=3254437" target="_blank">Secure My Connection</a>
+        <p class="note">Your free access window closes once the timer hits 0.</p>
+    </div>
+
+    <script>
+        let time = 300; // 5 minutes in seconds
+        const countdownEl = document.getElementById("countdown");
+
+        function updateCountdown() {
+            const minutes = Math.floor(time / 60);
+            const seconds = time % 60;
+            countdownEl.textContent = 
+                (minutes < 10 ? "0" : "") + minutes + ":" + 
+                (seconds < 10 ? "0" : "") + seconds;
+
+            if (time > 0) {
+                time--;
+                setTimeout(updateCountdown, 1000);
+            } else {
+                countdownEl.textContent = "00:00";
+            }
+        }
+
+        updateCountdown();
+    </script>
+</body>
+</html>
